@@ -3,7 +3,11 @@
 Proyecto académico de Ingeniería de Software 2 (ISW-2).
 
 API REST para registrar avistamientos de aves, construida con Java + Spring Boot + H2 Database.
-
+**Antes de ejecutar**
+Se debe tener instalado Java y Maven
+Se puede verificar con los comandos
+java -version
+mvn -version
 **Cómo ejecutar la aplicación**
 
 Clona este repositorio:
