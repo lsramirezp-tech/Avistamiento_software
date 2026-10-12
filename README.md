@@ -7,7 +7,9 @@ API REST para registrar avistamientos de aves, construida con Java + Spring Boot
 **Antes de ejecutar**
 
 Se debe tener instalado Java y Maven, esto se puede verificar con los comandos:
+
 java -version
+
 mvn -version
 
 
