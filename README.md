@@ -6,40 +6,36 @@ API REST para registrar avistamientos de aves, construida con Java + Spring Boot
 
 **Antes de ejecutar**
 
-Se debe tener instalado Java y Maven
-
-Se puede verificar con los comandos
-
+Se debe tener instalado Java y Maven, esto se puede verificar con los comandos:
 java -version
-
 mvn -version
 
 
 **Cómo ejecutar la aplicación**
 
-Clona este repositorio:
+1. Clona este repositorio:
 git clone https://github.com/lsramirezp-tech/Avistamiento_software.git (github.com in Bing)
 
-Entra a la carpeta del proyecto:
+2. Entra a la carpeta del proyecto:
 cd Avistamiento_software
 
-Ejecuta la aplicación:
+3. Ejecuta la aplicación:
 mvn spring-boot:run
 
-La API quedará disponible en:
+4. La API quedará disponible en:
 http://localhost:8080
 
 Endpoints disponibles
 
-Listar todos los avistamientos
+5. Listar todos los avistamientos
 GET /avistamientos
 Respuesta: 200 OK con lista en JSON
 
-Ver un avistamiento por ID
+6. Ver un avistamiento por ID
 GET /avistamientos/{id}
 Respuesta: 200 OK con el avistamiento, o 404 Not Found si no existe
 
-Registrar un avistamiento
+7. Registrar un avistamiento
 POST /avistamientos
 Respuesta: 201 Created con el avistamiento creado, o 400 Bad Request si faltan datos
 
@@ -51,7 +47,7 @@ Ejemplo JSON:
 "observador": "Laura"
 }
 
-Actualizar un avistamiento
+8. Actualizar un avistamiento
 PUT /avistamientos/{id}
 Respuesta: 200 OK con el avistamiento actualizado, o 404 Not Found si no existe
 
@@ -63,11 +59,11 @@ Ejemplo JSON:
 "observador": "Laura"
 }
 
-Eliminar un avistamiento
+9. Eliminar un avistamiento
 DELETE /avistamientos/{id}
 Respuesta: 204 No Content si se eliminó, o 404 Not Found si no existe
 
-Bonus (opcional)
+10. Bonus (opcional)
 
 GET /avistamientos/resumen
 Devuelve un resumen de avistamientos por especie en formato JSON, por ejemplo:
@@ -76,7 +72,7 @@ Devuelve un resumen de avistamientos por especie en formato JSON, por ejemplo:
 "Gavilán": 2
 }
 
-Base de datos
+**Base de datos**
 
 La aplicación usa H2 en memoria.
 Accede a la consola en:
