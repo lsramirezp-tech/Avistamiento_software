@@ -37,11 +37,13 @@ Respuesta: 200 OK con lista en JSON
 7. Ver un avistamiento por ID
    
 GET /avistamientos/{id}
+
 Respuesta: 200 OK con el avistamiento, o 404 Not Found si no existe
 
 9. Registrar un avistamiento
     
 POST /avistamientos
+
 Respuesta: 201 Created con el avistamiento creado, o 400 Bad Request si faltan datos
 
 Ejemplo JSON:
@@ -55,6 +57,7 @@ Ejemplo JSON:
 8. Actualizar un avistamiento
    
 PUT /avistamientos/{id}
+
 Respuesta: 200 OK con el avistamiento actualizado, o 404 Not Found si no existe
 
 Ejemplo JSON:
@@ -68,6 +71,7 @@ Ejemplo JSON:
 9. Eliminar un avistamiento
     
 DELETE /avistamientos/{id}
+
 Respuesta: 204 No Content si se eliminó, o 404 Not Found si no existe
 
 11. Bonus (opcional)
