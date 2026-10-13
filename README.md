@@ -52,9 +52,7 @@ Asegúrate de tener instalado **Java** y **Maven** en tu equipo. Puedes verifica
 * **Respuesta:** `201 Created` con el avistamiento creado, o `400 Bad Request` si faltan datos obligatorios.
 * **Ejemplo cURL:**
   
-      curl -X POST http://localhost:8080/avistamientos \
-      -H "Content-Type: application/json" \
-      -d '{"especie": "Colibrí", "lugar": "Parque Simón Bolívar", "fecha": "2026-10-11", "observador": "Laura"}'
+      curl -X POST http://localhost:8080/avistamientos -H "Content-Type: application/json" -d "{\"especie\":\"Colibri\",\"lugar\":\"Parque Simon Bolivar\",\"fecha\":\"2026-10-11\",\"observador\":\"Laura\"}"
 
 ### 4. Actualizar un avistamiento
 
@@ -62,9 +60,8 @@ Asegúrate de tener instalado **Java** y **Maven** en tu equipo. Puedes verifica
 * **Respuesta:** `200 OK` con el avistamiento actualizado, o `404 Not Found` si no existe.
 * **Ejemplo cURL:**
   
-      curl -X PUT http://localhost:8080/avistamientos/1 \
-      -H "Content-Type: application/json" \
-      -d '{"especie": "Gavilán", "lugar": "Reserva Chingaza", "fecha": "2026-10-12", "observador": "Laura"}'
+      curl -X PUT http://localhost:8080/avistamientos/1 -H "Content-Type: application/json" -d "{\"especie\":\"Gavilan\",\"lugar\":\"Reserva Chingaza\",\"fecha\":\"2026-10-12\",\"observador\":\"Laura\"}"
+
 
 ### 5. Eliminar un avistamiento
 
@@ -73,14 +70,6 @@ Asegúrate de tener instalado **Java** y **Maven** en tu equipo. Puedes verifica
 * **Ejemplo cURL:**
   
       curl -X DELETE http://localhost:8080/avistamientos/1
-
-### 6. Bonus (Opcional)
-
-* **Método y Ruta:** `GET /avistamientos/resumen`
-* **Descripción:** Devuelve un resumen con la cantidad total de avistamientos agrupados por especie en formato JSON.
-* **Ejemplo cURL:**
-  
-      curl -X GET http://localhost:8080/avistamientos/resumen
 
 ## Base de Datos (H2)
 
