@@ -1,5 +1,4 @@
 # API REST - Registro de Avistamientos de Aves
-
 Proyecto académico de Ingeniería de Software 2 (ISW-2).
 
 API REST para registrar avistamientos de aves, construida con Java + Spring Boot + H2 Database.
