@@ -1,104 +1,97 @@
-**API REST - Registro de Avistamientos de Aves**
+# API REST - Registro de Avistamientos de Aves
 
 Proyecto académico de Ingeniería de Software 2 (ISW-2).
 
 API REST para registrar avistamientos de aves, construida con Java + Spring Boot + H2 Database.
 
-**Antes de ejecutar**
+## Antes de ejecutar
 
-Se debe tener instalado Java y Maven, esto se puede verificar con los comandos:
+Asegúrate de tener instalado **Java** y **Maven** en tu equipo. Puedes verificarlo ejecutando los siguientes comandos en tu terminal:
 
-java -version
+    java -version
+    mvn -version
 
-mvn -version
+## Cómo ejecutar la aplicación
 
-
-**Cómo ejecutar la aplicación**
-
-1. Clona este repositorio:
-git clone https://github.com/lsramirezp-tech/Avistamiento_software.git (github.com in Bing)
-
-2. Entra a la carpeta del proyecto:
-cd Avistamiento_software
-
-3. Ejecuta la aplicación:
-mvn spring-boot:run
-
-4. La API quedará disponible en:
-http://localhost:8080
-
-Endpoints disponibles
-
-5. Listar todos los avistamientos
+1. **Clona este repositorio:**
    
-GET /avistamientos
-Respuesta: 200 OK con lista en JSON
+       git clone https://github.com/lsramirezp-tech/Avistamiento_software.git
 
-7. Ver un avistamiento por ID
+2. **Entra a la carpeta del proyecto:**
    
-GET /avistamientos/{id}
+       cd Avistamiento_software
 
-Respuesta: 200 OK con el avistamiento, o 404 Not Found si no existe
-
-9. Registrar un avistamiento
-    
-POST /avistamientos
-
-Respuesta: 201 Created con el avistamiento creado, o 400 Bad Request si faltan datos
-
-Ejemplo JSON:
-{
-"especie": "Colibrí",
-"lugar": "Parque Simón Bolívar",
-"fecha": "2026-10-11",
-"observador": "Laura"
-}
-
-8. Actualizar un avistamiento
+3. **Ejecuta la aplicación:**
    
-PUT /avistamientos/{id}
+       mvn spring-boot:run
 
-Respuesta: 200 OK con el avistamiento actualizado, o 404 Not Found si no existe
+4. **Accede a la API:**
+   La API quedará disponible en: `http://localhost:8080`
 
-Ejemplo JSON:
-{
-"especie": "Gavilán",
-"lugar": "Reserva Chingaza",
-"fecha": "2026-10-12",
-"observador": "Laura"
-}
+## Endpoints disponibles y Ejemplos de Uso (cURL)
 
-9. Eliminar un avistamiento
-    
-DELETE /avistamientos/{id}
+### 1. Listar todos los avistamientos
 
-Respuesta: 204 No Content si se eliminó, o 404 Not Found si no existe
+* **Método y Ruta:** `GET /avistamientos`
+* **Respuesta:** `200 OK` con la lista completa en formato JSON.
+* **Ejemplo cURL:**
+  
+      curl -X GET http://localhost:8080/avistamientos
 
-11. Bonus (opcional)
+### 2. Ver un avistamiento por ID
 
-GET /avistamientos/resumen
+* **Método y Ruta:** `GET /avistamientos/{id}`
+* **Respuesta:** `200 OK` con el avistamiento encontrado, o `404 Not Found` si no existe.
+* **Ejemplo cURL:**
+  
+      curl -X GET http://localhost:8080/avistamientos/1
 
-Devuelve un resumen de avistamientos por especie en formato JSON, por ejemplo:
-{
-"Colibrí": 3,
-"Gavilán": 2
-}
+### 3. Registrar un avistamiento
 
-**Base de datos**
+* **Método y Ruta:** `POST /avistamientos`
+* **Respuesta:** `201 Created` con el avistamiento creado, o `400 Bad Request` si faltan datos obligatorios.
+* **Ejemplo cURL:**
+  
+      curl -X POST http://localhost:8080/avistamientos \
+      -H "Content-Type: application/json" \
+      -d '{"especie": "Colibrí", "lugar": "Parque Simón Bolívar", "fecha": "2026-10-11", "observador": "Laura"}'
 
-La aplicación usa H2 en memoria.
-Accede a la consola en:
-http://localhost:8080/h2-console
+### 4. Actualizar un avistamiento
 
-JDBC URL: jdbc:h2:mem:avistamientosdb
+* **Método y Ruta:** `PUT /avistamientos/{id}`
+* **Respuesta:** `200 OK` con el avistamiento actualizado, o `404 Not Found` si no existe.
+* **Ejemplo cURL:**
+  
+      curl -X PUT http://localhost:8080/avistamientos/1 \
+      -H "Content-Type: application/json" \
+      -d '{"especie": "Gavilán", "lugar": "Reserva Chingaza", "fecha": "2026-10-12", "observador": "Laura"}'
 
-Usuario: sa
+### 5. Eliminar un avistamiento
 
-Password: vacío
+* **Método y Ruta:** `DELETE /avistamientos/{id}`
+* **Respuesta:** `204 No Content` si se eliminó con éxito, o `404 Not Found` si no existe.
+* **Ejemplo cURL:**
+  
+      curl -X DELETE http://localhost:8080/avistamientos/1
 
+### 6. Bonus (Opcional)
 
-Autor:
+* **Método y Ruta:** `GET /avistamientos/resumen`
+* **Descripción:** Devuelve un resumen con la cantidad total de avistamientos agrupados por especie en formato JSON.
+* **Ejemplo cURL:**
+  
+      curl -X GET http://localhost:8080/avistamientos/resumen
 
-Laura Sofía Ramírez Pulido
+## Base de Datos (H2)
 
-Estudiante de Ingeniería de Sistemas
+La aplicación utiliza una base de datos H2 integrada en memoria. Puedes acceder a su consola web de administración en:
+
+* **URL:** `http://localhost:8080/h2-console`
+* **JDBC URL:** `jdbc:h2:mem:avistamientosdb`
+* **Usuario:** `sa`
+* **Password:** *(Déjalo completamente vacío)*
+
+## Autor
+
+* **Laura Sofía Ramírez Pulido**
+* Estudiante de Ingeniería de Sistemas
