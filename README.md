@@ -24,7 +24,7 @@ Asegúrate de tener instalado **Java** y **Maven** en tu equipo. Puedes verifica
        mvn spring-boot:run
 
 4. **Accede a la API:**
-   La API quedará disponible en: `http://localhost:8080/avistamientos`
+   La API quedará disponible en: `http://localhost:8080/avistamientos `
 
 ## Endpoints disponibles y Ejemplos Curl
 
