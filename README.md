@@ -4,7 +4,6 @@ Proyecto académico de Ingeniería de Software 2 (ISW-2).
 API REST para registrar avistamientos de aves, construida con Java + Spring Boot + H2 Database.
 
 ## Antes de ejecutar
-
 Asegúrate de tener instalado **Java** y **Maven** en tu equipo. Puedes verificarlo ejecutando los siguientes comandos en tu terminal:
 
     java -version
@@ -27,13 +26,13 @@ Asegúrate de tener instalado **Java** y **Maven** en tu equipo. Puedes verifica
 4. **Accede a la API:**
    La API quedará disponible en: `http://localhost:8080`
 
-## Endpoints disponibles y Ejemplos de Uso (cURL)
+## Endpoints disponibles y Ejemplos Curl
 
 ### 1. Listar todos los avistamientos
 
 * **Método y Ruta:** `GET /avistamientos`
 * **Respuesta:** `200 OK` con la lista completa en formato JSON.
-* **Ejemplo cURL:**
+* **Ejemplo curl:**
   
       curl -X GET http://localhost:8080/avistamientos
 
@@ -41,7 +40,7 @@ Asegúrate de tener instalado **Java** y **Maven** en tu equipo. Puedes verifica
 
 * **Método y Ruta:** `GET /avistamientos/{id}`
 * **Respuesta:** `200 OK` con el avistamiento encontrado, o `404 Not Found` si no existe.
-* **Ejemplo cURL:**
+* **Ejemplo curl:**
   
       curl -X GET http://localhost:8080/avistamientos/1
 
@@ -49,7 +48,7 @@ Asegúrate de tener instalado **Java** y **Maven** en tu equipo. Puedes verifica
 
 * **Método y Ruta:** `POST /avistamientos`
 * **Respuesta:** `201 Created` con el avistamiento creado, o `400 Bad Request` si faltan datos obligatorios.
-* **Ejemplo cURL:**
+* **Ejemplo curl:**
   
       curl -X POST http://localhost:8080/avistamientos -H "Content-Type: application/json" -d "{\"especie\":\"Colibri\",\"lugar\":\"Parque Simon Bolivar\",\"fecha\":\"2026-10-11\",\"observador\":\"Laura\"}"
 
@@ -57,7 +56,7 @@ Asegúrate de tener instalado **Java** y **Maven** en tu equipo. Puedes verifica
 
 * **Método y Ruta:** `PUT /avistamientos/{id}`
 * **Respuesta:** `200 OK` con el avistamiento actualizado, o `404 Not Found` si no existe.
-* **Ejemplo cURL:**
+* **Ejemplo curl:**
   
       curl -X PUT http://localhost:8080/avistamientos/1 -H "Content-Type: application/json" -d "{\"especie\":\"Gavilan\",\"lugar\":\"Reserva Chingaza\",\"fecha\":\"2026-10-12\",\"observador\":\"Laura\"}"
 
@@ -66,7 +65,7 @@ Asegúrate de tener instalado **Java** y **Maven** en tu equipo. Puedes verifica
 
 * **Método y Ruta:** `DELETE /avistamientos/{id}`
 * **Respuesta:** `204 No Content` si se eliminó con éxito, o `404 Not Found` si no existe.
-* **Ejemplo cURL:**
+* **Ejemplo curl:**
   
       curl -X DELETE http://localhost:8080/avistamientos/1
 
@@ -77,7 +76,7 @@ La aplicación utiliza una base de datos H2 integrada en memoria. Puedes acceder
 * **URL:** `http://localhost:8080/h2-console`
 * **JDBC URL:** `jdbc:h2:mem:avistamientosdb`
 * **Usuario:** `sa`
-* **Password:** *(Déjalo completamente vacío)*
+* **Password:** *(Se debe dejar ese espacio vacío)*
 
 ## Autor
 
