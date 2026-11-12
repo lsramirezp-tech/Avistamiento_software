@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: co.edu.unbosque.avistamientos.avistamientos_api.controller.AvistamientoControllerIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.92 s -- in co.edu.unbosque.avistamientos.avistamientos_api.controller.AvistamientoControllerIntegrationTest
